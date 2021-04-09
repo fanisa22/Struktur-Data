@@ -1,0 +1,37 @@
+*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ *
+ * @author fanisa
+ */
+public class Rekursif3 {
+    public static int cocok_data (int[] a, int b, int c) {
+        if (c < 0)
+            return - 1;
+        else if (a[c] == b)
+            return c;
+        else
+            return cocok_data(a, b, c - 1);
+    }
+    
+    public static int Cari (int[] a, int b) {
+        return cocok_data(a, b, a.length - 1);
+    }
+    
+    public static void main (String[] args) {
+        int[] data = {2, 5, 8, 10, 14, 32, 35, 41, 67, 88, 90, 101, 109};
+        System.out.print("Data : ");
+        for (int i = 0; i < data.length; i++)
+            System.out.print(" " + data[i]);
+        System.out.println("\nData yang dicari : 10");
+        int nilai = Cari (data,10);
+        if (nilai >= 0)
+            System.out.println("Data 10 berada pada indek ke - " +nilai);
+    }
+    
+}
+
